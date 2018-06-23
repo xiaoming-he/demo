@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--<bean id="sgtPeppers" class="com.ming.ioc.SgtPeppers"></bean>
+
+    <bean id="cdPlayer" class="com.ming.ioc.CDPlayer" c:compactDisc-ref="compactDisc">
+        &lt;!&ndash;<constructor-arg ref="sgtPeppers"></constructor-arg>&ndash;&gt;
+    </bean>
+-->
+    <bean id="blankDisc" class="com.ming.ioc.BlankDisc">
+        <constructor-arg name="artist" value="${disc.artist}"/>
+        <constructor-arg name="title" value="#{systemProperties['disc.title']}"/>
+        <constructor-arg name="tracks" >
+            <list>
+                <value>aaaa</value>
+                <value>bbbb</value>
+                <value>cccc</value>
+            </list>
+        </constructor-arg>
+    </bean>
+</beans>
