@@ -1,4 +1,4 @@
-package com.ming.web;
+package com.ming.web.controller;
 
 import com.ming.web.controller.HomeController;
 import org.junit.Test;

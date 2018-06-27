@@ -1,13 +1,13 @@
 package com.ming.web;
 
-import com.ming.web.config.RootCofig;
+import com.ming.web.config.RootConfig;
 import com.ming.web.config.WebConfig;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class SpittrWebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return new Class[]{RootCofig.class};
+        return new Class[]{RootConfig.class};
     }
 
     @Override

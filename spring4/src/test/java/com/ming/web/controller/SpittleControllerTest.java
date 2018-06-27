@@ -1,7 +1,7 @@
-package com.ming.web;
+package com.ming.web.controller;
 
 import com.ming.web.domain.Spittle;
-import com.ming.web.config.RootCofig;
+import com.ming.web.config.RootConfig;
 import com.ming.web.config.WebConfig;
 import com.ming.web.controller.SpittleController;
 import com.ming.web.dao.SpittleRepository;
@@ -30,7 +30,7 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standal
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppContextSetup;
 
 @WebAppConfiguration
-@ContextConfiguration(classes = {WebConfig.class, RootCofig.class})
+@ContextConfiguration(classes = {WebConfig.class, RootConfig.class})
 @RunWith(SpringJUnit4ClassRunner.class)
 public class SpittleControllerTest {
 
