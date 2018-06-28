@@ -1,12 +1,9 @@
 package com.ming.web.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
-import com.ming.web.dao.UserMapper;
-import com.ming.web.domain.User;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
-import org.mybatis.spring.SqlSessionTemplate;
-import org.mybatis.spring.mapper.MapperFactoryBean;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.*;
 import org.springframework.core.env.Environment;
@@ -18,6 +15,7 @@ import javax.sql.DataSource;
  * @author ming_he
  */
 @Configuration
+@MapperScan(basePackages = "com.ming.web.dao")
 @ComponentScan(basePackages = {"com.ming"},
         excludeFilters = {
         @ComponentScan.Filter(type = FilterType.ANNOTATION, value = EnableWebMvc.class)})
@@ -41,14 +39,14 @@ public class RootConfig {
     public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception {
         SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
         sqlSessionFactoryBean.setDataSource(dataSource);
-        sqlSessionFactoryBean.setTypeAliasesPackage("com.ming.domain");
+        sqlSessionFactoryBean.setTypeAliasesPackage("com.ming.web.domain");
         return sqlSessionFactoryBean.getObject();
     }
 
-    @Bean
+    /*@Bean
     public MapperFactoryBean<UserMapper> userMapper(SqlSessionFactory sqlSessionFactory) {
         MapperFactoryBean<UserMapper> factoryBean = new MapperFactoryBean<>(UserMapper.class);
         factoryBean.setSqlSessionFactory(sqlSessionFactory);
         return factoryBean;
-    }
+    }*/
 }
