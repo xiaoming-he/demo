@@ -1,3 +1,11 @@
-debug: true
-logging:
-  path:
+server:
+  port: 80
+spring:
+  datasource:
+    druid:
+      #driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://192.168.0.117:3306/demo
+      password: Hm123!@#
+      username: ming
+mybatis:
+  type-aliases-package: com.ming.domain
