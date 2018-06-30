@@ -6,7 +6,7 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 @Configuration
 
 @ImportResource("classpath:spring-context.xml")
-@ComponentScan(basePackageClasses = CompactDisc.class)
+@ComponentScan(basePackageClasses = CompactDisc.class,basePackages = "com.ming.bean")
 @Import(CDPlayerConfig.class)
 @PropertySource("classpath:app.properties")
 public class SoundConfig {
