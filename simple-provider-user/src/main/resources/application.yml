@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: provider-user
+eureka:
+  client:
+    serviceUrl:
+      defualtZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true

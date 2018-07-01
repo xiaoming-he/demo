@@ -12,6 +12,9 @@
         <module>spring4</module>
         <module>springboot</module>
         <module>jdk8</module>
+        <module>discovery-eureka</module>
+        <module>simple-provider-user</module>
+        <module>simple-consumer-movie</module>
     </modules>
 
     <build>
