@@ -1,6 +1,8 @@
 package com.ming.web.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
+import com.ming.plugin.MultiTenantPlugin;
+import org.apache.ibatis.plugin.Interceptor;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
@@ -38,6 +40,9 @@ public class RootConfig {
     @Bean
     public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception {
         SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
+        MultiTenantPlugin multiTenantPlugin = new MultiTenantPlugin();
+        multiTenantPlugin.setProperties(null);
+        sqlSessionFactoryBean.setPlugins(new Interceptor[] {multiTenantPlugin});
         sqlSessionFactoryBean.setDataSource(dataSource);
         sqlSessionFactoryBean.setTypeAliasesPackage("com.ming.web.domain");
         return sqlSessionFactoryBean.getObject();
