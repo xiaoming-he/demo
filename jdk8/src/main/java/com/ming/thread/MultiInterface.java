@@ -1,4 +1,4 @@
-package com.ming;
+package com.ming.thread;
 
 public class MultiInterface {
 
