@@ -8,4 +8,6 @@ import com.ming.web.domain.User;
  */
 public interface UserMapper {
     User getUser(long userId);
+
+    void addUser(User user);
 }

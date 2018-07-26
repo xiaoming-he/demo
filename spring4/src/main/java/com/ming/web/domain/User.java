@@ -1,6 +1,8 @@
 package com.ming.web.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 
@@ -9,6 +11,8 @@ import java.math.BigDecimal;
  * @date 2018/6/27 23:38
  */
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class User {
 
     private long id;

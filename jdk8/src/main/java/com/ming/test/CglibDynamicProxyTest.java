@@ -21,8 +21,18 @@ public class CglibDynamicProxyTest {
     }
 
     static class Person extends Parent{
+        private String str ;
+
         public void say() {
             System.out.println("hello world");
+        }
+
+        private void privateStr() {
+            System.out.println(str);
+        }
+
+        public void setStr() {
+            str = "hello world";
         }
     }
 
@@ -51,7 +61,9 @@ public class CglibDynamicProxyTest {
     public static void main(String[] args) {
         System.setProperty(DebuggingClassWriter.DEBUG_LOCATION_PROPERTY, "G:\\gitRepository\\demo");
         CglibProxy cglibProxy = new CglibProxy();
-        Person person = (Person) cglibProxy.getProxy(new Person());
-        person.say();
+        Person person = new Person();
+        person.setStr();
+        Person proxyPerson = (Person) cglibProxy.getProxy(person);
+        proxyPerson.privateStr();
     }
 }

@@ -7,4 +7,9 @@
     <select id="getUser" resultType="User">/*dialect*/
         SELECT * FROM t_user WHERE id = #{userId}
     </select>
+
+    <insert id="addUser" parameterType="User">
+        insert into t_user(id,username,realname,age,balance)
+        values(#{id}, #{userName}, #{realName}, #{age}, #{balance});
+    </insert>
 </mapper>
