@@ -12,6 +12,7 @@
         <module>spring4</module>
         <module>jdk8</module>
         <module>springcloud</module>
+        <module>sharding-jdbc</module>
     </modules>
 
     <build>
