@@ -13,6 +13,7 @@
         <module>jdk8</module>
         <module>springcloud</module>
         <module>sharding-jdbc</module>
+        <module>spring-boot</module>
     </modules>
 
     <build>
